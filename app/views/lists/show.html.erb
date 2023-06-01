@@ -1,0 +1,16 @@
+<%= link_to "Eliminar esta lista",
+  list_path(@list),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+
+<%= link_to("Crear un Bookmark",  new_list_bookmark_path(@list)) %>
+
+<%
+=begin%>
+ <%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :movie_id, collection: Movie.all, label: 'Select a movie' %>
+  <%= f.submit 'Add Bookmark' %>
+<% end %>
+
+<%
+=end%>
