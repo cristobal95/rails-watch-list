@@ -5,6 +5,20 @@
 
 <%= link_to("Crear un Bookmark",  new_list_bookmark_path(@list)) %>
 
+
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= bookmark.comment %></li>
+     <li><%= image_tag bookmark.movie.poster_url %></li>
+<%= link_to "Eliminar",
+  bookmark_path(bookmark),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+  <% end %>
+</ul>
+
+
+
 <%
 =begin%>
  <%= simple_form_for [@list, @bookmark] do |f| %>

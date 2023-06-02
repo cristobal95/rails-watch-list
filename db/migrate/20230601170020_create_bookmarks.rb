@@ -4,6 +4,6 @@ class CreateBookmarks < ActiveRecord::Migration[7.0]
       t.string :comment
 
       t.timestamps
-    en|
+    end
   end
 end
